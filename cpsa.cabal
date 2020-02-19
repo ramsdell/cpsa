@@ -137,10 +137,11 @@ Extra-Source-Files:
   tst/chan-perrig-song.tst tst/chan-unilateral.scm
   tst/chan-unilateral.tst tst/factvar.scm tst/factvar.tst
   tst/renamings.scm tst/renamings.tst
-
+  tst/blanchet_doorsep.prot tst/blanchet_doorsep.tst
+  
 Source-Repository head
   Type:     git
-  Location: git://github.com/ramsdell/cpsa.git
+  Location: git://github.com/mitre/cpsaexp.git
 
 Executable cpsa4
   Main-Is:              CPSA/Main.hs
@@ -248,3 +249,13 @@ Executable cpsa4init
   Hs-Source-Dirs:       src
   Other-Modules:
     Paths_cpsa
+
+Executable cpsa42latex
+  Main-Is:              CPSA/Latex/Main.hs
+  Build-Depends:        base
+  GHC-Options:
+    -Wall -fno-warn-name-shadowing -fwarn-unused-imports
+  Hs-Source-Dirs:       src
+  Other-Modules:
+    Paths_cpsa CPSA.Lib.Pretty CPSA.Lib.SExpr
+    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Expand
