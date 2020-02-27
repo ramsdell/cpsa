@@ -53,7 +53,7 @@ Data-Files:
 
 Data-Dir:               doc
 Extra-Source-Files:
-  Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
+  Makefile ChangeLog README NEWS mkghci cpsatst setup.bat doc/README
   doc/src/Makefile doc/src/macros.tex doc/src/cpsaprimer.tex
   doc/src/cpsagoals.tex doc/src/bcasyntax.tex
   doc/src/cpsaintroslides.tex doc/src/mitreslides.sty
@@ -138,7 +138,7 @@ Extra-Source-Files:
   tst/chan-unilateral.tst tst/factvar.scm tst/factvar.tst
   tst/renamings.scm tst/renamings.tst
   tst/blanchet_doorsep.prot tst/blanchet_doorsep.tst
-  
+
 Source-Repository head
   Type:     git
   Location: git://github.com/mitre/cpsaexp.git
