@@ -345,12 +345,22 @@ graphReduce orderings =
           | elem n seen = loop dst ns seen
           | otherwise = loop dst (preds n ++ ns) (n : seen)
 
--- Compute the transitive closure
+-- Compute the transitive closure, omitting pairs on the same strand.
+-- This version of transitive closure is used in generalization.
 -- This routine returns pairs that are not well ordered.
 -- Deal with it!
 graphClose :: [GraphEdge e i] -> [GraphEdge e i]
 graphClose orderings =
-    filter (not . sameStrands) (loop orderings False orderings)
+    filter (not . sameStrands) (graphCloseAll orderings)
+    where
+      sameStrands (n0, n1) = strand n0 == strand n1
+
+-- Compute the transitive closure.
+-- This routine returns pairs that are not well ordered.
+-- Deal with it!
+graphCloseAll :: [GraphEdge e i] -> [GraphEdge e i]
+graphCloseAll orderings =
+    loop orderings False orderings
     where
       loop orderings False [] = orderings
       loop orderings True [] =
@@ -362,7 +372,6 @@ graphClose orderings =
       inner orderings repeat pairs (p : rest)
           | elem p orderings = inner orderings repeat pairs rest
           | otherwise = inner (p : orderings) True pairs rest
-      sameStrands (n0, n1) = strand n0 == strand n1
 
 -- Shared part of preskeletons
 
@@ -2351,7 +2360,7 @@ gprec n n' k (g, e) =
         (g, e) <- nodeMatch n p (g, e)
         nodeMatch n' p' (g, e)
   where
-    tc = map graphPair $ graphClose $ graphEdges $ strands k
+    tc = map graphPair $ graphCloseAll $ graphEdges $ strands k
 
 inSkel :: Preskel -> (Int, Int) -> Bool
 inSkel k (s, i) =
@@ -2711,7 +2720,7 @@ rprec name (z, i) (z', i') k (g, e) =
     _ ->
       error ("In rule " ++ name ++ ", precedence did not get a strand")
   where
-    tc = map graphPair $ graphClose $ graphEdges $ strands k
+    tc = map graphPair $ graphCloseAll $ graphEdges $ strands k
 
 badIndex :: Preskel -> Sid -> Int -> Bool
 badIndex k s i =

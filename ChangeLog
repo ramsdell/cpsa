@@ -1,3 +1,8 @@
+2020-04-16  John D. Ramsdell  <ramsdell@mitre.org>
+
+	* src/CPSA/Strand.hs (graphCloseAll): Added transitive closure
+	that includes pairs on the same strand.
+
 2020-03-05  John D. Ramsdell  <ramsdell@mitre.org>
 
 	* cpsa.cabal (Extra-Source-Files): Remove defunct CGI scripts.
