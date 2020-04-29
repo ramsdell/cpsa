@@ -12,7 +12,7 @@ module CPSA.Protocol (Event (..), evtCm, evtTerm, evtChan, evtMap, evt,
     Role, rname, rvars, rtrace, rnon, rpnon, runique, rconf, rauth, rcomment,
     rsearch, rnorig, rpnorig, ruorig, rpconf, rpauth, rpriority, mkRole,
     tchans, varSubset, varsInTerms, addVars, firstOccurs,
-    AForm (..), NodeTerm, Goal (..),
+    AForm (..), NodeTerm, Goal (..), concl,
     aFormOrder, aFreeVars, Rule (..),
     Prot, mkProt, pname, alg, pgen, roles, rules, listenerRole,
     varsAllAtoms, pcomment) where
@@ -290,9 +290,11 @@ data Goal
   = Goal { uvars :: [Term],          -- Universally quantified variables
            antec :: [AForm],         -- Antecedent
            -- Consequent with existentially quantified variables
-           consq :: [([Term], [AForm])],
-           concl :: [[AForm]] }      -- Conclusion
+           consq :: [([Term], [AForm])] }
     deriving Show
+
+concl :: Goal -> [[AForm]]
+concl goal = map snd $ consq goal
 
 -- Ordering used to sort by constructor order.
 aFormOrder :: AForm -> AForm -> Ordering

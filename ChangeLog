@@ -1,3 +1,7 @@
+2020-04-29  John D. Ramsdell  <ramsdell@mitre.org>
+
+	* src/CPSA/Protocol.hs (Goal): Removed concl field in a Goal.
+
 2020-04-16  John D. Ramsdell  <ramsdell@mitre.org>
 
 	* src/CPSA/Strand.hs (graphCloseAll): Added transitive closure
@@ -5,7 +9,7 @@
 
 2020-03-05  John D. Ramsdell  <ramsdell@mitre.org>
 
-	* cpsa.cabal (Extra-Source-Files): Remove defunct CGI scripts.
+	* cpsa.cabal (Extra-Source-Files): Removed defunct CGI scripts.
 
 2020-03-04  John D. Ramsdell  <ramsdell@mitre.org>
 

@@ -633,8 +633,7 @@ loadImplication md _ prot g vars (L pos [S _ "implies", a, c]) =
     let goal =
           Goal { uvars = vars,
                  antec = map snd antec,
-                 consq = consq,
-                 concl = map snd consq }
+                 consq = consq }
     return (g, goal, antec)
 loadImplication _ pos _ _ _ _ = fail (shows pos "Bad goal implication")
 
