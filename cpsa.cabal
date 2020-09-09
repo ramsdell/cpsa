@@ -256,3 +256,16 @@ Executable cpsa4init
   Hs-Source-Dirs:       src
   Other-Modules:
     Paths_cpsa
+
+Executable cpsa4roletran
+  Main-Is:              CPSA/Roletran/Main.hs
+  Default-Language:     Haskell2010
+  Build-Depends:        base >= 4 && < 5, containers
+  GHC-Options:
+    -Wall -fno-warn-name-shadowing -fwarn-unused-imports
+  Hs-Source-Dirs:       src
+  Other-Modules:
+    Paths_cpsa CPSA.Lib.ReturnFail CPSA.Lib.Pretty CPSA.Lib.SExpr
+    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Expand
+    CPSA.Roletran.Algebra CPSA.Roletran.Protocol CPSA.Roletran.Loader
+    CPSA.Roletran.Displayer CPSA.Roletran.Derivation CPSA.Roletran.Emitter

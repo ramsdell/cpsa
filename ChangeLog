@@ -1,3 +1,7 @@
+2020-09-09  John D. Ramsdell  <ramsdell@mitre.org>
+
+	* src/CPSA/Roletran/Main.hs: Added cpsa4roletran
+
 2020-04-29  John D. Ramsdell  <ramsdell@mitre.org>
 
 	* src/CPSA/Protocol.hs (Goal): Removed concl field in a Goal.
