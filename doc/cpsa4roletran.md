@@ -139,9 +139,9 @@ procedure.
 
 There are six kinds of statements.
 
-- `(let (VAR, TYPE) EXPR)` binds variable VAR to the results of
+- `(let (VAR TYPE) EXPR)` binds variable VAR to the results of
   expression EXPR.
-- `(let (VAR, TYPE) (recv CVAR))` binds variable VAR to the results of
+- `(let (VAR TYPE) (recv CVAR))` binds variable VAR to the results of
   reading a message on channel CVAR.
 - `(send CVAR VAR)` transmits the contents of variable VAR on channel
   CVAR.
