@@ -30,10 +30,10 @@ increases, even when employing the best programmer/CPSA expert.  The
 a language independent procedure.  It uses the same algorithms
 implemented in CPSA to ensure a faithful translation.
 
-This document describes the use of the compiler and the theory behind
-it.  It assumes the reader is experienced with CPSA4, version
-four of CPSA.  This version of CPSA is required because channels play
-an essential part in the translation.
+This document describes the use of the compiler.  It assumes the
+reader is experienced with CPSA4, version four of CPSA.  This version
+of CPSA is required because channels play an essential part in the
+translation.
 
 In typical usage, protocols are analyzed using CPSA4 to ensure they
 achieve desired security goals before any attempt is made to construct
