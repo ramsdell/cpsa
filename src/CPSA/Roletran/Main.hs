@@ -3,7 +3,6 @@
 module Main (main) where
 
 import System.IO
--- import CPSA.Lib.SExpr (PosHandle, SExpr, Pos)
 import CPSA.Lib.Entry
 import CPSA.Lib.Expand
 import CPSA.Roletran.Protocol

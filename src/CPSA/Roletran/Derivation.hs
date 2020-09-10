@@ -91,7 +91,7 @@ deriveEvent :: MonadFail m => [(Term, Int)] ->
 deriveEvent uniques st ((Out pos ch t), i) =
   do
     -- Create uniques and synthesize the channel
-    (st, chan) <- build pos (deriveUniques uniques i st) ch
+    (st, chan) <- build pos (deriveUniques uniques i (sendCmt pos st)) ch
     -- Synthesize the message
     (st, v) <- build pos st t
     return (
@@ -104,7 +104,7 @@ deriveEvent _ st ((In pos ch t), _) =
     Nothing ->                  -- t is receivable.
       do
         -- Synthesize the channel.
-        (st, chan) <- build pos st ch
+        (st, chan) <- build pos (recvCmt pos st) ch
         let (fresh, cs, stmts) = st
         let recv = Recv (fresh, sort t) chan
         let st' = (fresh + 1, cs, recv : stmts)
@@ -112,6 +112,16 @@ deriveEvent _ st ((In pos ch t), _) =
         reduce pos st' t fresh
     Just t ->                   -- t is the offending term
       fail (shows pos ("Message not receivable " ++ show (displayTerm t)))
+
+-- Comments for events
+
+sendCmt :: Pos -> State -> State
+sendCmt pos (fresh, cs, stmts) =
+  (fresh, cs, Comment ("Send (" ++ displayPos pos ++ ")") : stmts)
+
+recvCmt :: Pos -> State -> State
+recvCmt pos (fresh, cs, stmts) =
+  (fresh, cs, Comment ("Recv (" ++ displayPos pos ++ ")") : stmts)
 
 -- Add uniques as appropriate.
 deriveUniques :: [(Term, Int)] -> Int -> State -> State
