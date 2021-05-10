@@ -49,7 +49,6 @@ kind (En _ _) = KSenc
 kind (Hsh _) = KHash
 kind (Chn _) = KChan
 
-
 -- When true, add the kind of a let bound variable
 showBindKind :: Bool
 showBindKind = True
