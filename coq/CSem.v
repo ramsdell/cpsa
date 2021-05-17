@@ -192,7 +192,7 @@ Qed.
 Inductive expr_csem: cenv -> list cevt -> list calg -> list nat ->
                      expr -> calg -> list cevt ->
                      list calg -> list nat -> Prop :=
-| CExpr_tag: forall ev tr us rs x,
+| CExpr_quot: forall ev tr us rs x,
     expr_csem ev tr us rs (Quot_ x) (CTg x) tr us rs
 | CExpr_hash: forall ev tr us rs x a,
     lookup x ev = Some a ->
@@ -219,7 +219,7 @@ Inductive expr_csem: cenv -> list cevt -> list calg -> list nat ->
     lookup x ev = Some (CEn r a b) ->
     lookup y ev = Some (cinv b) ->
     expr_csem ev tr us rs (Decr_ x y) a tr us rs
-| CExpr_nonce: forall ev tr us rs a,
+| CExpr_frsh: forall ev tr us rs a,
     expr_csem ev tr (a :: us) rs Frsh_ a tr us rs
 | CExpr_recv: forall ev tr us rs a c d,
     lookup c ev = Some (CCh d) ->
@@ -294,7 +294,34 @@ Inductive stmt_csem: cenv -> list cevt -> list calg ->
     lookup x ev = Some a ->
     lookup y ev = Some b ->
     a = b ->                    (* Sameness check *)
-    stmt_csem ev tr us rs (Same x y) ev tr us rs.
+    stmt_csem ev tr us rs (Same x y) ev tr us rs
+| CStmt_invp: forall ev tr us rs x y a b,
+    lookup x ev = Some a ->
+    lookup y ev = Some b ->
+    a = cinv b ->               (* Inverse check *)
+    stmt_csem ev tr us rs (Invp x y) ev tr us rs
+| CStmt_pub_namp: forall ev tr us rs x y a b,
+    lookup x ev = Some (CAk a) ->
+    lookup y ev = Some (CNm b) ->
+    a = Pb b ->                (* Name check *)
+    stmt_csem ev tr us rs (Namp x y) ev tr us rs
+| CStmt_priv_namp: forall ev tr us rs x y a b,
+    lookup x ev = Some (CIk a) ->
+    lookup y ev = Some (CNm b) ->
+    a = Pb b ->                (* Name check *)
+    stmt_csem ev tr us rs (Namp x y) ev tr us rs
+| CStmt_pub_nm2p: forall ev tr us rs x y z a s b,
+    lookup x ev = Some (CAk a) ->
+    lookup y ev = Some (CTg s) ->
+    lookup z ev = Some (CNm b) ->
+    a = Pb2 s b ->              (* Tagged name check *)
+    stmt_csem ev tr us rs (Nm2p x y z) ev tr us rs
+| CStmt_priv_nm2p: forall ev tr us rs x y z a s b,
+    lookup x ev = Some (CIk a) ->
+    lookup y ev = Some (CTg s) ->
+    lookup z ev = Some (CNm b) ->
+    a = Pb2 s b ->              (* Tagged name check *)
+    stmt_csem ev tr us rs (Nm2p x y z) ev tr us rs.
 #[global]
 Hint Constructors stmt_csem : core.
 
@@ -306,6 +333,11 @@ Proof.
   intros.
   inv H.
   - exists [(v, val)]; auto.
+  - exists []; auto.
+  - exists []; auto.
+  - exists []; auto.
+  - exists []; auto.
+  - exists []; auto.
   - exists []; auto.
   - exists []; auto.
 Qed.
@@ -323,6 +355,8 @@ Proof.
   - apply expr_csem_expr_sem in H0.
     apply Stmt_bind; auto.
   - apply Stmt_send; auto.
+  - eapply Stmt_invp; eauto.
+    rewrite inv_to_alg; auto.
 Qed.
 
 (** The semantics of a statement list
