@@ -133,7 +133,7 @@ import Data.Set (Set)
 import qualified Data.Map as M
 import Data.Map (Map)
 import Data.Char (isDigit)
-import CPSA.Lib.Utilities (replaceNth)
+import CPSA.Lib.Utilities (replaceNth, adjoin)
 import CPSA.Lib.SExpr (SExpr(..), Pos, annotation)
 
 name :: String
@@ -207,11 +207,18 @@ data Term
 -- Terms that represent algebra variables.
 isVar :: Term -> Bool
 isVar (I _) = True           -- Sort: mesg
-isVar (F s [I _]) =
-    -- Sorts: text, data, name, skey, akey, and chan
-    s == Text || s == Data || s == Name
-    || s == Skey || s == Akey || s == Chan
+isVar (F s [I _]) = varSym s
 isVar _ = False
+
+-- Sorts: text, data, name, skey, akey, and chan
+varSym :: Symbol -> Bool
+varSym Text = True
+varSym Data = True
+varSym Name = True
+varSym Skey = True
+varSym Akey = True
+varSym Chan = True
+varSym _ = False
 
 -- Is term a channel variable
 isChan :: Term -> Bool
@@ -339,13 +346,8 @@ badGen (Gen g) t =
 
 -- Is the sort of the term a base sort?
 isAtom :: Term -> Bool
-isAtom (I _) = False
-isAtom (C _) = False
-isAtom (F s _) =
-    s == Text || s == Data || s == Name
-    || s == Skey || s == Akey || s == Chan
-isAtom (D _) = False
-isAtom (Z _) = False
+isAtom (F s _) = varSym s
+isAtom _ = False
 
 -- Does a variable occur in a term?
 occursIn :: Term -> Term -> Bool
@@ -471,9 +473,6 @@ encryptions t =
       loop t@(F Hash [t']) acc =
           adjoin (t, [t']) acc
       loop _ acc = acc
-      adjoin x xs
-          | x `elem` xs = xs
-          | otherwise = x : xs
 
 escapeSet :: Set Term -> Set Term -> Term -> Maybe (Set Term)
 escapeSet ts a ct =
