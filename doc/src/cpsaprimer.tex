@@ -1260,27 +1260,6 @@ skeletons when {\cpsa} finds all the shapes for the problem.  The
 details of formula extraction are presented in Appendix~B of The
 {\cpsa} Specification~\cite{cpsaspec09}.
 
-\section{Annotations}\label{sec:annotations}
-
-The \texttt{cpsaannotations} program uses protocol annotations to
-annotate shapes and generate protocol soundness obligations for use
-with the rely-guarantee method of trust
-management~\cite{GuttmanEtAl04,RamsdellEtAl09}.  The language of
-formulas is order-sorted first-order logic extended with a modal says
-operator.  Formula terms may include function symbols that are not
-part of a protocol's message signature.  The syntax of a formula is
-specified in the {\cpsa} Overview~\cite{cpsaoverview09}.
-
-\section{Parameter Analysis}\label{sec:parameters}
-
-The parameters of a role are the atoms that are not acquired by the
-role's trace, but must be available before a complete execution of the
-trace is possible. The \texttt{cpsaparameters} program computes sets
-of sets of parameters consistent with the role. If the expected
-parameter set is not a member, a specification error is indicated.
-The details of parameter analysis are presented in Appendix~A of The
-{\cpsa} Specification~\cite{cpsaspec09}.
-
 \section*{Acknowledgement}
 
 Jonathan K.\@ Millen provided valuable feedback as our first {\cpsa}
