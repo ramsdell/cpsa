@@ -1,4 +1,4 @@
-(comment "CPSA 4.2.3")
+(comment "CPSA 4.2.4")
 (comment "All input read from tst/targetterms1.scm")
 
 (defprotocol targetterms basic
