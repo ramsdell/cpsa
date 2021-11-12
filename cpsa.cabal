@@ -50,7 +50,7 @@ Data-Files:
 
 Data-Dir:               doc
 Extra-Source-Files:
-  Makefile ChangeLog README NEWS mkghci cpsatst setup.bat doc/README
+  Makefile ChangeLog README NEWS mkghci cpsatst fixperms setup.bat doc/README
   doc/src/Makefile doc/src/macros.tex doc/src/cpsaprimer.tex
   doc/src/cpsagoals.tex doc/src/bcasyntax.tex
   doc/src/cpsaintroslides.tex doc/src/mitreslides.sty
@@ -59,7 +59,7 @@ Extra-Source-Files:
   doc/src/cmstrands.mp doc/src/carriers.mp doc/src/termtree.mp
   doc/src/blanchet.mp doc/src/mitrelogo.mp doc/src/cpsa.bib
   doc/SDAG.lhs doc/cpsalogo.mp src/index.html src/cpsajson.py
-  src/split.py src/cpsa2svg src/cpsa.el src/cpsaperm.scm
+  src/split.py src/lastlabel.py src/cpsa2svg src/cpsa.el src/cpsaperm.scm
   src/cpsaops.scm src/preskel src/cpsa.pl src/unsorted.pl src/pp.pl
   src/sexpr.pl src/perm.pl src/prover9.pl src/zoom.js src/js2hs
   src/ghcmemlimit build.xml src/scala/Main.scala
@@ -71,67 +71,74 @@ Extra-Source-Files:
   src/ocaml/token.mli src/ocaml/scanner.mll src/ocaml/sexpr.ml
   src/ocaml/sexpr.mli src/ocaml/sexpr_type.ml tst/README tst/Makefile
   tst/Make4.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
-  tst/graphtst tst/updatetst tst/aik.scm tst/aik.tst tst/blanchet.scm
-  tst/blanchet.tst tst/completeness-test.scm tst/completeness-test.tst
-  tst/crushing.tst tst/crushing.tst tst/dass.lisp tst/dass-mod.lisp
-  tst/dass_simple.scm tst/dass_simple.tst tst/denning-sacco.scm
-  tst/denning-sacco.tst tst/deorig_contract.scm
-  tst/deorig_contract.tst tst/deorig_mesg.scm tst/deorig_mesg.tst
-  tst/deorig_simple.scm tst/deorig_simple.tst tst/DH_hack.scm
-  tst/DH_hack.tst tst/ds-short.lisp tst/dy.lsp tst/dy.tst
-  tst/encsig.scm tst/encsig.tst tst/epmo_acctnum-key-hash.scm
-  tst/epmo_acctnum-key-hash.tst tst/epmo_acctnum.lisp
-  tst/epmo-hash.scm tst/epmo-hash.tst tst/epmo-key-hash.scm
-  tst/epmo-key-hash.tst tst/epmo.scm tst/epmo.tst tst/ffgg.scm
-  tst/ffgg.tst tst/fragile_pruning.scm tst/fragile_pruning.tst
-  tst/goals.scm tst/goals.tst tst/hashtest-key-hash.scm
-  tst/hashtest-key-hash.tst tst/hashtest.scm tst/hashtest.tst
-  tst/incompleteness_example.scm tst/incompleteness_example.tst
-  tst/isoreject.scm tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst
-  tst/kelly64.lisp tst/kerb5.lisp tst/kerberos.scm tst/kerberos.tst
-  tst/mass2.lsp tst/mass2.tst tst/mass.lsp tst/mass.tst
-  tst/missing_contraction.scm tst/missing_contraction.tst
+  tst/cpsagraphtst tst/updatetst
+  tst/DH_hack.scm tst/DH_hack.tst tst/ab.scm tst/ab.tst tst/abc.scm
+  tst/abc.tst tst/aik.scm tst/aik.tst tst/attest.scm tst/attest.tst
+  tst/blanchet.scm tst/blanchet.tst tst/blanchet_doorsep.prot
+  tst/blanchet_doorsep.tst tst/bug_example.scm tst/bug_example.tst
+  tst/chan-envelope.scm tst/chan-envelope.tst tst/chan-perrig-song.scm
+  tst/chan-perrig-song.tst tst/chan-unilateral.scm
+  tst/chan-unilateral.tst tst/chan-yahalom.scm tst/chan-yahalom.tst
+  tst/comp_test.scm tst/comp_test.tst tst/completeness-test.scm
+  tst/completeness-test.tst tst/crushing.scm tst/crushing.tst
+  tst/dass-mod.lisp tst/dass.lisp tst/dass_simple.scm
+  tst/dass_simple.tst tst/denning-sacco.scm tst/denning-sacco.tst
+  tst/deorig_contract.scm tst/deorig_contract.tst tst/deorig_mesg.scm
+  tst/deorig_mesg.tst tst/deorig_simple.scm tst/deorig_simple.tst
+  tst/dh-ca_hack.scm tst/dh-ca_hack.tst tst/dh_encrypt_hack.scm
+  tst/dh_encrypt_hack.tst tst/dh_mim.lisp tst/dh_mim_hack.scm
+  tst/dh_mim_hack.tst tst/dhke2.lisp tst/dhnsl_hack.scm
+  tst/dhnsl_hack.tst tst/doorsep.scm tst/doorsep.tst
+  tst/doorsep2invk.scm tst/doorsep2invk.tst tst/ds-short.lisp
+  tst/dy.lsp tst/dy.tst tst/encsig.scm tst/encsig.tst tst/envelope.scm
+  tst/envelope.tst tst/epmo-hash.scm tst/epmo-hash.tst
+  tst/epmo-key-hash.scm tst/epmo-key-hash.tst tst/epmo.scm
+  tst/epmo.tst tst/epmo_acctnum-key-hash.scm
+  tst/epmo_acctnum-key-hash.tst tst/epmo_acctnum.lisp tst/expand.scm
+  tst/expand.tst tst/facts.scm tst/facts.tst tst/factvar.scm
+  tst/factvar.tst tst/ffgg.scm tst/ffgg.tst
+  tst/fluffy_draft03_gske.scm tst/fluffy_draft03_gske.tst
+  tst/fragile_pruning.scm tst/fragile_pruning.tst tst/goals.scm
+  tst/goals.tst tst/hashtest-key-hash.scm tst/hashtest-key-hash.tst
+  tst/hashtest.scm tst/hashtest.tst tst/incompleteness_example.scm
+  tst/incompleteness_example.tst tst/isoreject.scm tst/isoreject.tst
+  tst/kelly1.scm tst/kelly1.tst tst/kelly64.lisp tst/kerb5.lisp
+  tst/kerberos.scm tst/kerberos.tst tst/mass.lsp tst/mass.tst
+  tst/mass2.lsp tst/mass2.tst tst/missing_contraction.scm
+  tst/missing_contraction.tst tst/neq_test.scm tst/neq_test.tst
   tst/neuman-stubblebine-alt.lisp tst/neuman-stubblebine-reauth.lisp
   tst/neuman-stubblebine-reauth.lsp tst/neuman-stubblebine-reauth.tst
   tst/neuman-stubblebine.scm tst/neuman-stubblebine.tst
-  tst/no_contraction.scm tst/no_contraction.tst tst/nonaug-prune.scm
-  tst/nonaug-prune.tst tst/non_transforming.scm
-  tst/non_transforming.tst tst/nsl3.scm tst/nsl3.tst tst/nsl4cm1.lisp
-  tst/nsl4.lisp tst/nsl4resp2.lisp tst/nsl5i.lisp tst/nsl5.lisp
-  tst/ns-l.scm tst/nslsk.scm tst/nslsk.tst tst/ns-l.tst tst/ns.scm
-  tst/ns.tst tst/or.scm tst/or.tst tst/pca.scm tst/pca.tst
+  tst/no_contraction.scm tst/no_contraction.tst
+  tst/non_transforming.scm tst/non_transforming.tst
+  tst/nonaug-prune.scm tst/nonaug-prune.tst tst/ns-l.scm tst/ns-l.tst
+  tst/ns.scm tst/ns.tst tst/nsl3.scm tst/nsl3.tst tst/nsl4.lisp
+  tst/nsl4cm1.lisp tst/nsl4init.lisp tst/nsl4resp1.lisp
+  tst/nsl4resp2.lisp tst/nsl4resp3.lisp tst/nsl5.lisp tst/nsl5i.lisp
+  tst/nsl5resp3.lisp tst/nslsk.scm tst/nslsk.tst tst/or.scm tst/or.tst
+  tst/ordered.scm tst/ordered.tst tst/pca.scm tst/pca.tst
   tst/pen-non-orig-test.scm tst/pen-non-orig-test.tst tst/pkinit.scm
   tst/pkinit.tst tst/preprocess.scm tst/preprocess.tst tst/print.scm
-  tst/print.tst tst/pruning1.scm tst/pruning1.tst tst/sigenc.scm
-  tst/sigenc.tst tst/sorted_epmo_acctnum.scm
-  tst/sorted_epmo_acctnum.tst tst/targetterms1.scm
-  tst/targetterms1.tst tst/targetterms2.scm tst/targetterms2.tst
-  tst/targetterms6.scm tst/targetterms6.tst tst/targetterms8.scm
-  tst/targetterms8.tst tst/timestamping.scm tst/timestamping.tst
-  tst/tnsl5.lisp tst/uncarried_keys.scm tst/uncarried_keys.tst
-  tst/uo.scm tst/uo.tst tst/wang-hash.scm tst/wang-hash.tst
-  tst/wang-key-hash.scm tst/wang-key-hash.tst tst/wang.lisp
-  tst/weird.scm tst/weird.tst tst/wide-mouth-frog.lsp
+  tst/print.tst tst/prottrans.scm tst/prottrans.tst tst/pruning1.scm
+  tst/pruning1.tst tst/reflect.scm tst/reflect.tst tst/renamings.scm
+  tst/renamings.tst tst/role_uniq.scm tst/role_uniq.tst
+  tst/rule-order.scm tst/rule-order.tst tst/sigenc.scm tst/sigenc.tst
+  tst/sorted_epmo_acctnum.scm tst/sorted_epmo_acctnum.tst
+  tst/targetterms1.scm tst/targetterms1.tst tst/targetterms2.scm
+  tst/targetterms2.tst tst/targetterms6.scm tst/targetterms6.tst
+  tst/targetterms8.scm tst/targetterms8.tst tst/thisthat.scm
+  tst/thisthat.tst tst/timestamping.scm tst/timestamping.tst
+  tst/tnsl5.lisp tst/trust-anchor.scm tst/trust-anchor.tst
+  tst/uncarried_keys.scm tst/uncarried_keys.tst tst/unilateral.scm
+  tst/unilateral.tst tst/uo.scm tst/uo.tst tst/wang-hash.scm
+  tst/wang-hash.tst tst/wang-key-hash.scm tst/wang-key-hash.tst
+  tst/wang.lisp tst/weird.scm tst/weird.tst
   tst/wide-mouth-frog-scyther.lsp tst/wide-mouth-frog-scyther.tst
-  tst/wide-mouth-frog.tst tst/wonthull2.scm tst/wonthull2.tst
-  tst/wonthull3.scm tst/wonthull3.tst tst/wonthull.scm
-  tst/wonthull.tst tst/woolam.scm tst/woolam.tst tst/yahalom-6.3.6.scm
-  tst/yahalom-6.3.6.tst tst/yahalom.scm tst/yahalom.tst
-  tst/unilateral.scm tst/unilateral.tst tst/doorsep2invk.scm
-  tst/doorsep2invk.tst tst/doorsep.scm tst/doorsep.tst tst/facts.scm
-  tst/facts.tst tst/reflect.scm tst/reflect.tst tst/ab.tst tst/abc.tst
-  tst/bug_example.tst tst/dh-ca_hack.tst tst/dh_encrypt_hack.tst
-  tst/dh_mim_hack.tst tst/dhnsl_hack.tst tst/epmo_acctnum.tst
-  tst/thisthat.tst tst/attest.scm tst/attest.tst tst/prottrans.scm
-  tst/prottrans.tst tst/neq_test.scm tst/neq_test.tst
-  tst/fluffy_draft03_gske.scm tst/fluffy_draft03_gske.tst
-  tst/envelope.scm tst/envelope.tst tst/expand.scm tst/expand.tst
-  tst/role_uniq.scm tst/role_uniq.tst tst/chan-envelope.scm
-  tst/chan-envelope.tst tst/chan-yahalom.scm tst/chan-yahalom.tst
-  tst/chan-perrig-song.scm tst/chan-perrig-song.tst
-  tst/chan-unilateral.scm tst/chan-unilateral.tst tst/factvar.scm
-  tst/factvar.tst tst/renamings.scm tst/renamings.tst
-  tst/blanchet_doorsep.prot tst/blanchet_doorsep.tst
+  tst/wide-mouth-frog.lsp tst/wide-mouth-frog.tst tst/wonthull.scm
+  tst/wonthull.tst tst/wonthull2.scm tst/wonthull2.tst
+  tst/wonthull3.scm tst/wonthull3.tst tst/woolam.scm tst/woolam.tst
+  tst/yahalom-6.3.6.scm tst/yahalom-6.3.6.tst tst/yahalom.scm
+  tst/yahalom.tst
   coq/Sem_tactics.v coq/Comp.v coq/Alt_sem.v coq/Match.v coq/Alg.v
   coq/Exec.v coq/Intro.v coq/Nonce.v coq/Preamble.v
   coq/Unilateral_proof.v coq/Makefile coq/Run.v coq/procdoc.tex

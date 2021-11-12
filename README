@@ -48,7 +48,6 @@ INSTALLING FROM A TARBALL
 
 Build and install with:
 
-$ cabal configure
 $ cabal build
 $ cabal install
 : To find the directory containing documentation and samples, type:
@@ -77,7 +76,6 @@ Core and then run:
 
 C:\...> cabal update
 C:\...> cabal install parallel
-C:\...> cabal configure
 C:\...> cabal build
 C:\...> cabal install
 
@@ -124,6 +122,11 @@ read.  The CPSA Design should be read if one is interested in reading
 the Haskell source for the tool collection.
 
 TEST SUITE
+
+Cabal currently fails to preserve permissions correctly.  To fix this
+problem, type:
+
+$ /bin/sh fixperms
 
 : To run the test suite type:
 $ ./cpsatst
