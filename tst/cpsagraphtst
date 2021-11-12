@@ -2,7 +2,7 @@
 
 # Graph all expected test output.
 
-PROG=cpsagraph
+PROG=cpsa4graph
 
 for i in *.tst
 do
