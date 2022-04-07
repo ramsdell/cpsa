@@ -71,7 +71,7 @@ step output name origin margin state sexpr =
               writeLnSExpr output margin x
               after output margin acc sexpr
         Left err ->
-            abort (show err)
+            abort err
 
 after :: Handle -> Int -> State -> Maybe (SExpr Pos) -> IO State
 after output margin state (Just sexpr@(L _ (S _ "defprotocol" : _))) =
