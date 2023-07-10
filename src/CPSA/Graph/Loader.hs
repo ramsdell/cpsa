@@ -14,7 +14,7 @@
 module CPSA.Graph.Loader (Preskel, Dir (..), Vertex, protocol, role, env,
                           inst, part, lastVertex, vertices, Node, vnode,
                           strands, label, parent, seen, unrealized, shape,
-                          empty, protSrc, preskelSrc, initial, strand, pos,
+                          protSrc, preskelSrc, initial, strand, pos,
                           prev, next, msg, dir, succs, preds,
                           State, loadFirst, loadNext)
                           where
@@ -37,7 +37,6 @@ data Preskel = Preskel
       initial :: [Vertex],      -- The initial node in each strand
       unrealized :: Maybe [Vertex], -- Nodes not realized if available
       shape :: Bool,            -- Is preskel a shape?
-      empty :: Bool,            -- Does preskel have an empty cohort?
       protSrc :: SExpr Pos,     -- Source for the protocol
       preskelSrc :: SExpr Pos } -- Source for this preskeleton
     deriving Show
@@ -257,7 +256,6 @@ loadInsts s pos p tag revInsts _ xs =
       let heights = map (length . trace) insts
       unrealized <- loadNodes heights (assoc "unrealized" xs)
       let shape = maybe False (const True) (assoc "shape" xs)
-      let empty = elem "empty cohort" (qassoc "comment" xs)
       let orderings = maybe [] id (assoc "precedes" xs)
       pairs <- loadOrderings heights orderings
       let graph = adj heights pairs
@@ -276,7 +274,6 @@ loadInsts s pos p tag revInsts _ xs =
                              initial = initial,
                              unrealized = unrealized',
                              shape = shape,
-                             empty = empty,
                              protSrc = src p,
                              preskelSrc = s }
             where
@@ -407,16 +404,6 @@ assoc key alist =
 
 -- assoc key alist =
 --    concat [ rest | L _ (S _ head : rest) <- alist, key == head ]
-
-qassoc :: String -> [SExpr Pos] -> [String]
-qassoc key xs =
-  case assoc key xs of
-    Nothing -> []
-    Just vals ->
-      concatMap f vals
-      where
-        f (Q _ s) = [s]
-        f _ = []
 
 nassoc :: MonadFail m => String -> [SExpr Pos] -> m (Maybe Int)
 nassoc key xs =
