@@ -63,6 +63,11 @@
   (label 2)
   (parent 0)
   (seen 5)
+  (seen-ops
+    (5
+      (operation nonce-test (added-strand resp 2) x1 (0 1)
+        (enc "okay" y3 x1 (pubk a)) (enc x1 x1 (pubk a))
+        (enc x1 x2 (pubk a)))))
   (unrealized (0 1))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -127,6 +132,11 @@
   (label 5)
   (parent 1)
   (seen 10)
+  (seen-ops
+    (10
+      (operation nonce-test (added-strand resp 2) x1 (0 1)
+        (enc "okay" y3 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x1 (pubk a)) (enc x1 x2 (pubk a)))))
   (unrealized (0 1))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -168,6 +178,11 @@
   (label 7)
   (parent 2)
   (seen 13)
+  (seen-ops
+    (13
+      (operation nonce-test (added-strand resp 2) x1 (0 1)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x1 (pubk a)) (enc x1 x2 (pubk a)))))
   (unrealized (0 1))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -211,6 +226,7 @@
   (label 9)
   (parent 4)
   (seen 3)
+  (seen-ops (3 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -257,6 +273,7 @@
   (label 11)
   (parent 5)
   (seen 16)
+  (seen-ops (16 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -280,6 +297,7 @@
   (label 12)
   (parent 5)
   (seen 6)
+  (seen-ops (6 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -344,6 +362,7 @@
   (label 15)
   (parent 7)
   (seen 6)
+  (seen-ops (6 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -362,6 +381,7 @@
   (label 16)
   (parent 8)
   (seen 3)
+  (seen-ops (3 (operation generalization separated x1-0)))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -388,6 +408,7 @@
   (label 17)
   (parent 10)
   (seen 11)
+  (seen-ops (11 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -414,6 +435,7 @@
   (label 18)
   (parent 13)
   (seen 15)
+  (seen-ops (15 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -504,6 +526,11 @@
   (label 22)
   (parent 20)
   (seen 25)
+  (seen-ops
+    (25
+      (operation nonce-test (displaced 2 1 resp 2) x1-0 (0 1)
+        (enc "okay" x3 x1-0 (pubk a)) (enc x1-0 x3 (pubk a))
+        (enc x1 x1-0 (pubk a)))))
   (unrealized (0 1))
   (origs (x1 (0 0)))
   (comment "3 in cohort - 2 not yet seen"))
@@ -527,6 +554,11 @@
   (label 23)
   (parent 20)
   (seen 29)
+  (seen-ops
+    (29
+      (operation nonce-test (displaced 3 1 resp 2) x3-0 (0 1)
+        (enc "okay" y3 x3-0 (pubk a-0)) (enc x1-0 x3-0 (pubk a-0))
+        (enc x3-0 x3 (pubk a-0)))))
   (unrealized (0 1))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -549,6 +581,15 @@
   (label 24)
   (parent 20)
   (seen 28 33)
+  (seen-ops
+    (28
+      (operation nonce-test (displaced 3 1 resp 2) x1-0 (0 1)
+        (enc "okay" y3 x1-0 (pubk a-0)) (enc x1-0 x3 (pubk a-0))
+        (enc x1-0 x1-0 (pubk a-0))))
+    (33
+      (operation nonce-test (added-strand resp 2) x1-0 (0 1)
+        (enc "okay" y3 x1-0 (pubk a)) (enc x1-0 x3 (pubk a))
+        (enc x1-0 x1-0 (pubk a)))))
   (unrealized (0 1))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -652,6 +693,11 @@
   (label 29)
   (parent 22)
   (seen 44)
+  (seen-ops
+    (44
+      (operation nonce-test (added-strand resp 2) x1 (0 1)
+        (enc "okay" x3 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (0 1))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -674,6 +720,10 @@
   (label 30)
   (parent 23)
   (seen 47)
+  (seen-ops
+    (47
+      (operation nonce-test (contracted (a-0 a)) y3 (1 0)
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -700,6 +750,12 @@
   (label 31)
   (parent 23)
   (seen 45)
+  (seen-ops
+    (45
+      (operation nonce-test (displaced 4 1 resp 2) x3-0 (0 1)
+        (enc "okay" x1-0 x3-0 (pubk a-0))
+        (enc "okay" y3 x3-0 (pubk a-0)) (enc x1-0 x3-0 (pubk a-0))
+        (enc x3-0 x3 (pubk a-0)))))
   (unrealized (0 1))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -722,6 +778,13 @@
   (label 32)
   (parent 23)
   (seen 27 46)
+  (seen-ops
+    (27
+      (operation nonce-test (displaced 3 2 resp 2) x3 (1 0)
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a))))
+    (46
+      (operation nonce-test (contracted (x1-0 x3) (a-0 a)) x3 (1 0)
+        (enc x3 x3 (pubk a)) (enc x1 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -748,6 +811,20 @@
   (label 33)
   (parent 23)
   (seen 36 44 54)
+  (seen-ops
+    (36
+      (operation nonce-test (displaced 4 3 resp 2) x1-0 (0 1)
+        (enc "okay" y3 x1-0 (pubk a)) (enc "okay" y3-0 x1-0 (pubk a))
+        (enc x1-0 x3 (pubk a)) (enc x1-0 x1-0 (pubk a))))
+    (44
+      (operation nonce-test (displaced 4 1 resp 2) x1-0 (0 1)
+        (enc "okay" y3 x1-0 (pubk a-0))
+        (enc "okay" y3-0 x1-0 (pubk a-0)) (enc x1-0 x3 (pubk a-0))
+        (enc x1-0 x1-0 (pubk a-0))))
+    (54
+      (operation nonce-test (added-strand resp 2) x1-0 (0 1)
+        (enc "okay" y3 x1-0 (pubk a)) (enc "okay" y3-0 x1-0 (pubk a))
+        (enc x1-0 x3 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (0 1))
   (comment "6 in cohort - 3 not yet seen"))
 
@@ -770,6 +847,10 @@
   (label 34)
   (parent 24)
   (seen 42)
+  (seen-ops
+    (42
+      (operation nonce-test (contracted (a-0 a)) y3 (1 0)
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -797,6 +878,11 @@
   (label 35)
   (parent 24)
   (seen 59)
+  (seen-ops
+    (59
+      (operation nonce-test (added-strand resp 2) x1-0 (0 1)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc "okay" y3 x1-0 (pubk a))
+        (enc x1-0 x3 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (0 1))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -821,6 +907,10 @@
   (label 36)
   (parent 24)
   (seen 43)
+  (seen-ops
+    (43
+      (operation nonce-test (contracted (x1-0 x1) (a-0 a)) x1 (1 0)
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -843,6 +933,7 @@
   (label 37)
   (parent 27)
   (seen 25)
+  (seen-ops (25 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -865,6 +956,7 @@
   (label 38)
   (parent 27)
   (seen 26)
+  (seen-ops (26 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -914,6 +1006,11 @@
   (label 40)
   (parent 27)
   (seen 69)
+  (seen-ops
+    (69
+      (operation nonce-test (added-strand resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -939,6 +1036,7 @@
   (label 41)
   (parent 28)
   (seen 42)
+  (seen-ops (42 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1006,6 +1104,12 @@
   (label 44)
   (parent 28)
   (seen 43)
+  (seen-ops
+    (43
+      (operation nonce-test (displaced 4 2 resp 2) x1 (0 1)
+        (enc "okay" x3 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (0 1))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -1052,6 +1156,7 @@
   (label 46)
   (parent 29)
   (seen 25)
+  (seen-ops (25 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1119,6 +1224,11 @@
   (label 49)
   (parent 30)
   (seen 82)
+  (seen-ops
+    (82
+      (operation nonce-test (displaced 4 2 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc x1 y3 (pubk a))
+        (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -1143,6 +1253,15 @@
   (label 50)
   (parent 30)
   (seen 83 86)
+  (seen-ops
+    (83
+      (operation nonce-test (displaced 4 2 resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (86
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -1168,6 +1287,10 @@
   (label 51)
   (parent 31)
   (seen 80)
+  (seen-ops
+    (80
+      (operation nonce-test (contracted (a-0 a)) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -1193,6 +1316,13 @@
   (label 52)
   (parent 31)
   (seen 50 79)
+  (seen-ops
+    (50
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (79
+      (operation nonce-test (contracted (a-0 a)) y3 (1 0)
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -1218,6 +1348,10 @@
   (label 53)
   (parent 31)
   (seen 78)
+  (seen-ops
+    (78
+      (operation nonce-test (contracted (x1-0 x3) (a-0 a)) x3 (1 0)
+        (enc x3 x3 (pubk a)) (enc x1 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -1247,6 +1381,12 @@
   (label 54)
   (parent 31)
   (seen 64)
+  (seen-ops
+    (64
+      (operation nonce-test (displaced 5 4 resp 2) x1-0 (0 1)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc "okay" y3 x1-0 (pubk a))
+        (enc "okay" y3-0 x1-0 (pubk a)) (enc x1-0 x3 (pubk a))
+        (enc x1-0 x1-0 (pubk a)))))
   (unrealized (0 1))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -1268,6 +1408,7 @@
   (label 55)
   (parent 32)
   (seen 26)
+  (seen-ops (26 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1292,6 +1433,11 @@
   (label 56)
   (parent 32)
   (seen 27)
+  (seen-ops
+    (27
+      (operation nonce-test (displaced 4 2 resp 2) x3 (1 0)
+        (enc "okay" y3-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -1317,6 +1463,13 @@
   (label 57)
   (parent 33)
   (seen 50 77)
+  (seen-ops
+    (50
+      (operation nonce-test (displaced 4 3 resp 2) y3 (1 0)
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (77
+      (operation nonce-test (contracted (a-0 a)) y3 (1 0)
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -1344,6 +1497,13 @@
   (label 58)
   (parent 33)
   (seen 62 76)
+  (seen-ops
+    (62
+      (operation nonce-test (displaced 4 2 resp 2) y3-0 (1 0)
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a))))
+    (76
+      (operation nonce-test (contracted (a-0 a)) y3-0 (1 0)
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -1373,6 +1533,12 @@
   (label 59)
   (parent 33)
   (seen 64)
+  (seen-ops
+    (64
+      (operation nonce-test (displaced 5 4 resp 2) x1-0 (0 1)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc "okay" y3 x1-0 (pubk a))
+        (enc "okay" y3-0 x1-0 (pubk a)) (enc x1-0 x3 (pubk a))
+        (enc x1-0 x1-0 (pubk a)))))
   (unrealized (0 1))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -1417,6 +1583,11 @@
   (label 61)
   (parent 34)
   (seen 113)
+  (seen-ops
+    (113
+      (operation nonce-test (displaced 4 2 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -1441,6 +1612,15 @@
   (label 62)
   (parent 34)
   (seen 114 117)
+  (seen-ops
+    (114
+      (operation nonce-test (displaced 4 2 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a))))
+    (117
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -1466,6 +1646,13 @@
   (label 63)
   (parent 35)
   (seen 41 61)
+  (seen-ops
+    (41
+      (operation nonce-test (contracted (a-0 a)) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (61
+      (operation nonce-test (displaced 4 2 resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -1542,6 +1729,10 @@
   (label 66)
   (parent 36)
   (seen 65)
+  (seen-ops
+    (65
+      (operation nonce-test (displaced 4 2 resp 2) x1-0 (1 0)
+        (enc "okay" y3-0 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -1702,6 +1893,7 @@
   (label 73)
   (parent 43)
   (seen 25)
+  (seen-ops (25 (operation generalization separated x1-0)))
   (unrealized)
   (origs (x1 (0 0)))
   (comment "1 in cohort - 0 not yet seen"))
@@ -1731,6 +1923,7 @@
   (label 74)
   (parent 44)
   (seen 76)
+  (seen-ops (76 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1759,6 +1952,7 @@
   (label 75)
   (parent 44)
   (seen 80)
+  (seen-ops (80 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1785,6 +1979,7 @@
   (label 76)
   (parent 44)
   (seen 42)
+  (seen-ops (42 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1863,6 +2058,7 @@
   (label 79)
   (parent 45)
   (seen 47)
+  (seen-ops (47 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1889,6 +2085,7 @@
   (label 80)
   (parent 45)
   (seen 138)
+  (seen-ops (138 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1911,6 +2108,7 @@
   (label 81)
   (parent 48)
   (seen 47)
+  (seen-ops (47 (operation generalization weakened ((2 1) (1 0)))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -1960,6 +2158,11 @@
   (label 83)
   (parent 48)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -1985,6 +2188,7 @@
   (label 84)
   (parent 49)
   (seen 47)
+  (seen-ops (47 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2012,6 +2216,11 @@
   (label 85)
   (parent 49)
   (seen 141)
+  (seen-ops
+    (141
+      (operation nonce-test (displaced 5 2 resp 2) y3 (1 0)
+        (enc "okay" x1 y3 (pubk a)) (enc "okay" y3-0 y3 (pubk a))
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -2039,6 +2248,15 @@
   (label 86)
   (parent 49)
   (seen 142 145)
+  (seen-ops
+    (142
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2064,6 +2282,7 @@
   (label 87)
   (parent 50)
   (seen 138)
+  (seen-ops (138 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2091,6 +2310,11 @@
   (label 88)
   (parent 50)
   (seen 147)
+  (seen-ops
+    (147
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -2117,6 +2341,11 @@
   (label 89)
   (parent 51)
   (seen 86)
+  (seen-ops
+    (86
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -2141,6 +2370,11 @@
   (label 90)
   (parent 51)
   (seen 86)
+  (seen-ops
+    (86
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -2165,6 +2399,15 @@
   (label 91)
   (parent 51)
   (seen 151 155)
+  (seen-ops
+    (151
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (155
+      (operation nonce-test (displaced 4 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2191,6 +2434,19 @@
   (label 92)
   (parent 51)
   (seen 90 152 157)
+  (seen-ops
+    (90
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (152
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (157
+      (operation nonce-test (displaced 5 3 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -2238,6 +2494,19 @@
   (label 94)
   (parent 52)
   (seen 85 161 163)
+  (seen-ops
+    (85
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" x1 y3 (pubk a)) (enc x1 y3 (pubk a))
+        (enc y3 x3 (pubk a))))
+    (161
+      (operation nonce-test (displaced 4 2 resp 2) y3 (1 0)
+        (enc "okay" x1 y3 (pubk a)) (enc x1 y3 (pubk a))
+        (enc y3 x3 (pubk a))))
+    (163
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 1 not yet seen"))
 
@@ -2264,6 +2533,19 @@
   (label 95)
   (parent 52)
   (seen 85 86 162)
+  (seen-ops
+    (85
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc x1 y3 (pubk a))
+        (enc y3 x3 (pubk a))))
+    (86
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (162
+      (operation nonce-test (displaced 5 2 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc x1 y3 (pubk a))
+        (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -2311,6 +2593,11 @@
   (label 97)
   (parent 53)
   (seen 39)
+  (seen-ops
+    (39
+      (operation nonce-test (displaced 4 3 resp 2) x3 (1 0)
+        (enc "okay" y3 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -2335,6 +2622,15 @@
   (label 98)
   (parent 53)
   (seen 39 103)
+  (seen-ops
+    (39
+      (operation nonce-test (displaced 4 2 resp 2) x3 (1 0)
+        (enc "okay" x1-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a))))
+    (103
+      (operation nonce-test (added-strand resp 2) x3 (1 0)
+        (enc "okay" x1-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2361,6 +2657,15 @@
   (label 99)
   (parent 53)
   (seen 97 103)
+  (seen-ops
+    (97
+      (operation nonce-test (displaced 5 2 resp 2) x3 (1 0)
+        (enc "okay" y3-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a))))
+    (103
+      (operation nonce-test (displaced 5 3 resp 2) x3 (1 0)
+        (enc "okay" y3-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 4 not yet seen"))
 
@@ -2389,6 +2694,16 @@
   (label 100)
   (parent 54)
   (seen 75 89 107)
+  (seen-ops
+    (75
+      (operation nonce-test (contracted (a-0 a)) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (89
+      (operation nonce-test (displaced 5 4 resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (107
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 3 not yet seen"))
 
@@ -2414,6 +2729,7 @@
   (label 101)
   (parent 56)
   (seen 37)
+  (seen-ops (37 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2439,6 +2755,7 @@
   (label 102)
   (parent 56)
   (seen 38)
+  (seen-ops (38 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2466,6 +2783,11 @@
   (label 103)
   (parent 56)
   (seen 39)
+  (seen-ops
+    (39
+      (operation nonce-test (displaced 5 2 resp 2) x3 (1 0)
+        (enc "okay" x1-0 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -2493,6 +2815,15 @@
   (label 104)
   (parent 56)
   (seen 40 183)
+  (seen-ops
+    (40
+      (operation nonce-test (displaced 5 2 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a))))
+    (183
+      (operation nonce-test (added-strand resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2519,6 +2850,11 @@
   (label 105)
   (parent 57)
   (seen 50)
+  (seen-ops
+    (50
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 4 not yet seen"))
 
@@ -2543,6 +2879,15 @@
   (label 106)
   (parent 57)
   (seen 83 188)
+  (seen-ops
+    (83
+      (operation nonce-test (displaced 4 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a))))
+    (188
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2569,6 +2914,19 @@
   (label 107)
   (parent 57)
   (seen 86 189 191)
+  (seen-ops
+    (86
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a))))
+    (189
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a))))
+    (191
+      (operation nonce-test (displaced 5 2 resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -2595,6 +2953,11 @@
   (label 108)
   (parent 58)
   (seen 114)
+  (seen-ops
+    (114
+      (operation nonce-test (displaced 4 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -2624,6 +2987,15 @@
   (label 109)
   (parent 58)
   (seen 117 195)
+  (seen-ops
+    (117
+      (operation nonce-test (displaced 5 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a))))
+    (195
+      (operation nonce-test (displaced 5 3 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -2653,6 +3025,19 @@
   (label 110)
   (parent 58)
   (seen 62 196 199)
+  (seen-ops
+    (62
+      (operation nonce-test (displaced 5 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a))))
+    (196
+      (operation nonce-test (displaced 5 3 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a))))
+    (199
+      (operation nonce-test (added-strand resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -2681,6 +3066,16 @@
   (label 111)
   (parent 59)
   (seen 74 109 122)
+  (seen-ops
+    (74
+      (operation nonce-test (contracted (a-0 a)) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (109
+      (operation nonce-test (displaced 5 3 resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (122
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 3 not yet seen"))
 
@@ -2703,6 +3098,7 @@
   (label 112)
   (parent 60)
   (seen 42)
+  (seen-ops (42 (operation generalization weakened ((2 1) (1 0)))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2752,6 +3148,11 @@
   (label 114)
   (parent 60)
   (seen 206)
+  (seen-ops
+    (206
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-0 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -2777,6 +3178,7 @@
   (label 115)
   (parent 61)
   (seen 42)
+  (seen-ops (42 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2830,6 +3232,15 @@
   (label 117)
   (parent 61)
   (seen 206 209)
+  (seen-ops
+    (206
+      (operation nonce-test (displaced 5 2 resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (209
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3-0 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -2855,6 +3266,7 @@
   (label 118)
   (parent 62)
   (seen 42)
+  (seen-ops (42 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -2882,6 +3294,11 @@
   (label 119)
   (parent 62)
   (seen 211)
+  (seen-ops
+    (211
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-0 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -2906,6 +3323,11 @@
   (label 120)
   (parent 63)
   (seen 113)
+  (seen-ops
+    (113
+      (operation nonce-test (displaced 4 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -2932,6 +3354,15 @@
   (label 121)
   (parent 63)
   (seen 61 214)
+  (seen-ops
+    (61
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (214
+      (operation nonce-test (displaced 5 3 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -2958,6 +3389,19 @@
   (label 122)
   (parent 63)
   (seen 117 215 218)
+  (seen-ops
+    (117
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (215
+      (operation nonce-test (displaced 5 3 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (218
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -3008,6 +3452,10 @@
   (label 124)
   (parent 64)
   (seen 128)
+  (seen-ops
+    (128
+      (operation nonce-test (displaced 4 3 resp 2) x1-0 (1 0)
+        (enc "okay" y3 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -3035,6 +3483,13 @@
   (label 125)
   (parent 64)
   (seen 128 130)
+  (seen-ops
+    (128
+      (operation nonce-test (displaced 4 2 resp 2) x1-0 (1 0)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a))))
+    (130
+      (operation nonce-test (added-strand resp 2) x1-0 (1 0)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -3065,6 +3520,13 @@
   (label 126)
   (parent 64)
   (seen 124 130)
+  (seen-ops
+    (124
+      (operation nonce-test (displaced 5 2 resp 2) x1-0 (1 0)
+        (enc "okay" y3-0 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a))))
+    (130
+      (operation nonce-test (displaced 5 3 resp 2) x1-0 (1 0)
+        (enc "okay" y3-0 x1-0 (pubk a)) (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -3086,6 +3548,7 @@
   (label 127)
   (parent 65)
   (seen 73)
+  (seen-ops (73 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3136,6 +3599,7 @@
   (label 129)
   (parent 66)
   (seen 127)
+  (seen-ops (127 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3166,6 +3630,11 @@
   (label 130)
   (parent 66)
   (seen 128)
+  (seen-ops
+    (128
+      (operation nonce-test (displaced 5 2 resp 2) x1-0 (1 0)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc "okay" y3-0 x1-0 (pubk a))
+        (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -3186,6 +3655,7 @@
   (label 131)
   (parent 67)
   (seen 25)
+  (seen-ops (25 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3206,6 +3676,7 @@
   (label 132)
   (parent 68)
   (seen 26)
+  (seen-ops (26 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3280,6 +3751,7 @@
   (label 135)
   (parent 70)
   (seen 25)
+  (seen-ops (25 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3300,6 +3772,7 @@
   (label 136)
   (parent 71)
   (seen 26)
+  (seen-ops (26 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3340,6 +3813,7 @@
   (label 138)
   (parent 77)
   (seen 47)
+  (seen-ops (47 (operation generalization separated y3-0)))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3360,6 +3834,7 @@
   (label 139)
   (parent 78)
   (seen 25)
+  (seen-ops (25 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3385,6 +3860,7 @@
   (label 140)
   (parent 82)
   (seen 81)
+  (seen-ops (81 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3412,6 +3888,11 @@
   (label 141)
   (parent 82)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -3489,6 +3970,7 @@
   (label 144)
   (parent 85)
   (seen 164)
+  (seen-ops (164 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3545,6 +4027,7 @@
   (label 146)
   (parent 86)
   (seen 87)
+  (seen-ops (87 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3601,6 +4084,7 @@
   (label 148)
   (parent 88)
   (seen 205)
+  (seen-ops (205 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3628,6 +4112,7 @@
   (label 149)
   (parent 89)
   (seen 87)
+  (seen-ops (87 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3658,6 +4143,11 @@
   (label 150)
   (parent 89)
   (seen 147)
+  (seen-ops
+    (147
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -3685,6 +4175,11 @@
   (label 151)
   (parent 89)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -3715,6 +4210,19 @@
   (label 152)
   (parent 89)
   (seen 86 238 240)
+  (seen-ops
+    (86
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (238
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (240
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -3740,6 +4248,7 @@
   (label 153)
   (parent 90)
   (seen 138)
+  (seen-ops (138 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3767,6 +4276,11 @@
   (label 154)
   (parent 90)
   (seen 145)
+  (seen-ops
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -3792,6 +4306,11 @@
   (label 155)
   (parent 90)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -3817,6 +4336,7 @@
   (label 156)
   (parent 91)
   (seen 234)
+  (seen-ops (234 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3844,6 +4364,15 @@
   (label 157)
   (parent 91)
   (seen 155 240)
+  (seen-ops
+    (155
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (240
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -3871,6 +4400,7 @@
   (label 158)
   (parent 92)
   (seen 153)
+  (seen-ops (153 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3901,6 +4431,15 @@
   (label 159)
   (parent 92)
   (seen 154 242)
+  (seen-ops
+    (154
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (242
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -3926,6 +4465,7 @@
   (label 160)
   (parent 93)
   (seen 81)
+  (seen-ops (81 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -3951,6 +4491,15 @@
   (label 161)
   (parent 93)
   (seen 83 141)
+  (seen-ops
+    (83
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (141
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" x1 y3 (pubk a)) (enc "okay" y3 y3 (pubk a))
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -3978,6 +4527,15 @@
   (label 162)
   (parent 93)
   (seen 141 145)
+  (seen-ops
+    (141
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-0 y3 (pubk a))
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a))))
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -4005,6 +4563,11 @@
   (label 163)
   (parent 93)
   (seen 145)
+  (seen-ops
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -4030,6 +4593,7 @@
   (label 164)
   (parent 94)
   (seen 47)
+  (seen-ops (47 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4057,6 +4621,7 @@
   (label 165)
   (parent 95)
   (seen 84)
+  (seen-ops (84 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4087,6 +4652,15 @@
   (label 166)
   (parent 95)
   (seen 145 249)
+  (seen-ops
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (249
+      (operation nonce-test (displaced 6 2 resp 2) y3 (1 0)
+        (enc "okay" x1 y3 (pubk a)) (enc "okay" y3-0 y3 (pubk a))
+        (enc x1 y3 (pubk a)) (enc y3 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -4107,6 +4681,7 @@
   (label 167)
   (parent 96)
   (seen 26)
+  (seen-ops (26 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4132,6 +4707,7 @@
   (label 168)
   (parent 97)
   (seen 139)
+  (seen-ops (139 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4157,6 +4733,7 @@
   (label 169)
   (parent 97)
   (seen 167)
+  (seen-ops (167 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4210,6 +4787,15 @@
   (label 171)
   (parent 97)
   (seen 69 254)
+  (seen-ops
+    (69
+      (operation nonce-test (displaced 5 3 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a))))
+    (254
+      (operation nonce-test (added-strand resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -4235,6 +4821,7 @@
   (label 172)
   (parent 98)
   (seen 131)
+  (seen-ops (131 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4260,6 +4847,7 @@
   (label 173)
   (parent 98)
   (seen 132)
+  (seen-ops (132 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4287,6 +4875,7 @@
   (label 174)
   (parent 99)
   (seen 168)
+  (seen-ops (168 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4314,6 +4903,7 @@
   (label 175)
   (parent 99)
   (seen 169)
+  (seen-ops (169 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4344,6 +4934,11 @@
   (label 176)
   (parent 99)
   (seen 170)
+  (seen-ops
+    (170
+      (operation nonce-test (displaced 6 2 resp 2) x3 (1 0)
+        (enc "okay" x1-0 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 3 not yet seen"))
 
@@ -4374,6 +4969,19 @@
   (label 177)
   (parent 99)
   (seen 171 183 259)
+  (seen-ops
+    (171
+      (operation nonce-test (displaced 6 2 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a))))
+    (183
+      (operation nonce-test (displaced 6 3 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a))))
+    (259
+      (operation nonce-test (added-strand resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" y3-0 x3 (pubk a))
+        (enc x3 x3 (pubk a)) (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -4403,6 +5011,15 @@
   (label 178)
   (parent 100)
   (seen 89 189)
+  (seen-ops
+    (89
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (189
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 4 not yet seen"))
 
@@ -4429,6 +5046,19 @@
   (label 179)
   (parent 100)
   (seen 151 191 264)
+  (seen-ops
+    (151
+      (operation nonce-test (displaced 5 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (191
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (264
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -4458,6 +5088,23 @@
   (label 180)
   (parent 100)
   (seen 107 152 265 267)
+  (seen-ops
+    (107
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (152
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (265
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (267
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 2 not yet seen"))
 
@@ -4485,6 +5132,7 @@
   (label 181)
   (parent 103)
   (seen 67)
+  (seen-ops (67 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4512,6 +5160,7 @@
   (label 182)
   (parent 103)
   (seen 68)
+  (seen-ops (68 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4542,6 +5191,12 @@
   (label 183)
   (parent 103)
   (seen 69)
+  (seen-ops
+    (69
+      (operation nonce-test (displaced 6 2 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" x1-0 x3 (pubk a))
+        (enc "okay" y3-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -4569,6 +5224,7 @@
   (label 184)
   (parent 104)
   (seen 70)
+  (seen-ops (70 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4596,6 +5252,7 @@
   (label 185)
   (parent 104)
   (seen 71)
+  (seen-ops (71 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4623,6 +5280,7 @@
   (label 186)
   (parent 105)
   (seen 87)
+  (seen-ops (87 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4653,6 +5311,11 @@
   (label 187)
   (parent 105)
   (seen 88)
+  (seen-ops
+    (88
+      (operation nonce-test (displaced 6 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -4680,6 +5343,11 @@
   (label 188)
   (parent 105)
   (seen 83)
+  (seen-ops
+    (83
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -4710,6 +5378,19 @@
   (label 189)
   (parent 105)
   (seen 86 273 275)
+  (seen-ops
+    (86
+      (operation nonce-test (displaced 6 3 resp 2) y3 (1 0)
+        (enc "okay" y3-2 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (273
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc "okay" y3-2 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (275
+      (operation nonce-test (displaced 6 2 resp 2) y3 (1 0)
+        (enc "okay" y3-1 y3 (pubk a)) (enc "okay" y3-2 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -4735,6 +5416,7 @@
   (label 190)
   (parent 106)
   (seen 234)
+  (seen-ops (234 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4762,6 +5444,15 @@
   (label 191)
   (parent 106)
   (seen 142 275)
+  (seen-ops
+    (142
+      (operation nonce-test (displaced 5 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (275
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -4789,6 +5480,7 @@
   (label 192)
   (parent 107)
   (seen 153)
+  (seen-ops (153 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4819,6 +5511,15 @@
   (label 193)
   (parent 107)
   (seen 145 277)
+  (seen-ops
+    (145
+      (operation nonce-test (displaced 6 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a))))
+    (277
+      (operation nonce-test (added-strand resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-1 y3 (pubk a))
+        (enc y3 x3 (pubk a)) (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -4845,6 +5546,7 @@
   (label 194)
   (parent 108)
   (seen 112)
+  (seen-ops (112 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4875,6 +5577,11 @@
   (label 195)
   (parent 108)
   (seen 206)
+  (seen-ops
+    (206
+      (operation nonce-test (displaced 5 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -4905,6 +5612,15 @@
   (label 196)
   (parent 108)
   (seen 114 281)
+  (seen-ops
+    (114
+      (operation nonce-test (displaced 5 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a))))
+    (281
+      (operation nonce-test (added-strand resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -4934,6 +5650,7 @@
   (label 197)
   (parent 109)
   (seen 115)
+  (seen-ops (115 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -4968,6 +5685,11 @@
   (label 198)
   (parent 109)
   (seen 209)
+  (seen-ops
+    (209
+      (operation nonce-test (displaced 6 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -5002,6 +5724,19 @@
   (label 199)
   (parent 109)
   (seen 117 281 284)
+  (seen-ops
+    (117
+      (operation nonce-test (displaced 6 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc "okay" y3-2 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a))))
+    (281
+      (operation nonce-test (displaced 6 3 resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc "okay" y3-2 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a))))
+    (284
+      (operation nonce-test (added-strand resp 2) y3-0 (1 0)
+        (enc "okay" y3-1 y3-0 (pubk a)) (enc "okay" y3-2 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -5031,6 +5766,7 @@
   (label 200)
   (parent 110)
   (seen 118)
+  (seen-ops (118 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5065,6 +5801,15 @@
   (label 201)
   (parent 110)
   (seen 119 286)
+  (seen-ops
+    (119
+      (operation nonce-test (displaced 6 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a))))
+    (286
+      (operation nonce-test (added-strand resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc y3-0 x3 (pubk a)) (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -5091,6 +5836,15 @@
   (label 202)
   (parent 111)
   (seen 195 215)
+  (seen-ops
+    (195
+      (operation nonce-test (displaced 5 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (215
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 3 not yet seen"))
 
@@ -5120,6 +5874,19 @@
   (label 203)
   (parent 111)
   (seen 109 218 289)
+  (seen-ops
+    (109
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (218
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (289
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 3 not yet seen"))
 
@@ -5149,6 +5916,23 @@
   (label 204)
   (parent 111)
   (seen 122 199 290 293)
+  (seen-ops
+    (122
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (199
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (290
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (293
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 2 not yet seen"))
 
@@ -5174,6 +5958,7 @@
   (label 205)
   (parent 113)
   (seen 112)
+  (seen-ops (112 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5225,6 +6010,7 @@
   (label 207)
   (parent 114)
   (seen 112)
+  (seen-ops (112 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5252,6 +6038,7 @@
   (label 208)
   (parent 116)
   (seen 205)
+  (seen-ops (205 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5308,6 +6095,7 @@
   (label 210)
   (parent 117)
   (seen 118)
+  (seen-ops (118 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5364,6 +6152,7 @@
   (label 212)
   (parent 119)
   (seen 244)
+  (seen-ops (244 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5389,6 +6178,7 @@
   (label 213)
   (parent 120)
   (seen 112)
+  (seen-ops (112 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5416,6 +6206,11 @@
   (label 214)
   (parent 120)
   (seen 113)
+  (seen-ops
+    (113
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -5443,6 +6238,15 @@
   (label 215)
   (parent 120)
   (seen 206 300)
+  (seen-ops
+    (206
+      (operation nonce-test (displaced 5 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (300
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -5470,6 +6274,7 @@
   (label 216)
   (parent 121)
   (seen 115)
+  (seen-ops (115 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5500,6 +6305,11 @@
   (label 217)
   (parent 121)
   (seen 116)
+  (seen-ops
+    (116
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -5530,6 +6340,19 @@
   (label 218)
   (parent 121)
   (seen 117 300 303)
+  (seen-ops
+    (117
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (300
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (303
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-0 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "5 in cohort - 2 not yet seen"))
 
@@ -5557,6 +6380,7 @@
   (label 219)
   (parent 122)
   (seen 118)
+  (seen-ops (118 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5587,6 +6411,15 @@
   (label 220)
   (parent 122)
   (seen 211 305)
+  (seen-ops
+    (211
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (305
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -5607,6 +6440,7 @@
   (label 221)
   (parent 123)
   (seen 73)
+  (seen-ops (73 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5631,6 +6465,7 @@
   (label 222)
   (parent 124)
   (seen 221)
+  (seen-ops (221 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5709,6 +6544,7 @@
   (label 225)
   (parent 126)
   (seen 222)
+  (seen-ops (222 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5743,6 +6579,11 @@
   (label 226)
   (parent 126)
   (seen 223)
+  (seen-ops
+    (223
+      (operation nonce-test (displaced 6 2 resp 2) x1-0 (1 0)
+        (enc "okay" x1-0 x1-0 (pubk a)) (enc "okay" y3-0 x1-0 (pubk a))
+        (enc x1-0 x1-0 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -5768,6 +6609,7 @@
   (label 227)
   (parent 128)
   (seen 308)
+  (seen-ops (308 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5795,6 +6637,7 @@
   (label 228)
   (parent 130)
   (seen 227)
+  (seen-ops (227 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5818,6 +6661,7 @@
   (label 229)
   (parent 133)
   (seen 135)
+  (seen-ops (135 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5841,6 +6685,7 @@
   (label 230)
   (parent 134)
   (seen 136)
+  (seen-ops (136 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5891,6 +6736,7 @@
   (label 232)
   (parent 141)
   (seen 247)
+  (seen-ops (247 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5919,6 +6765,7 @@
   (label 233)
   (parent 142)
   (seen 143)
+  (seen-ops (143 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5939,6 +6786,7 @@
   (label 234)
   (parent 143)
   (seen 138)
+  (seen-ops (138 (operation generalization weakened ((2 1) (1 0)))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -5970,6 +6818,7 @@
   (label 235)
   (parent 145)
   (seen 233)
+  (seen-ops (233 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6001,6 +6850,7 @@
   (label 236)
   (parent 147)
   (seen 296)
+  (seen-ops (296 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6031,6 +6881,7 @@
   (label 237)
   (parent 150)
   (seen 148)
+  (seen-ops (148 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6063,6 +6914,12 @@
   (label 238)
   (parent 150)
   (seen 147)
+  (seen-ops
+    (147
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -6090,6 +6947,7 @@
   (label 239)
   (parent 151)
   (seen 143)
+  (seen-ops (143 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6120,6 +6978,12 @@
   (label 240)
   (parent 151)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -6150,6 +7014,7 @@
   (label 241)
   (parent 152)
   (seen 146)
+  (seen-ops (146 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6182,6 +7047,12 @@
   (label 242)
   (parent 152)
   (seen 145)
+  (seen-ops
+    (145
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-0 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -6233,6 +7104,7 @@
   (label 244)
   (parent 155)
   (seen 234)
+  (seen-ops (234 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6260,6 +7132,7 @@
   (label 245)
   (parent 157)
   (seen 244)
+  (seen-ops (244 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6290,6 +7163,7 @@
   (label 246)
   (parent 159)
   (seen 243)
+  (seen-ops (243 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6315,6 +7189,7 @@
   (label 247)
   (parent 161)
   (seen 81)
+  (seen-ops (81 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6342,6 +7217,7 @@
   (label 248)
   (parent 162)
   (seen 140)
+  (seen-ops (140 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6372,6 +7248,11 @@
   (label 249)
   (parent 162)
   (seen 145)
+  (seen-ops
+    (145
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -6399,6 +7280,7 @@
   (label 250)
   (parent 163)
   (seen 87)
+  (seen-ops (87 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6429,6 +7311,7 @@
   (label 251)
   (parent 166)
   (seen 144)
+  (seen-ops (144 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6592,6 +7475,7 @@
   (label 257)
   (parent 176)
   (seen 252)
+  (seen-ops (252 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6622,6 +7506,7 @@
   (label 258)
   (parent 176)
   (seen 253)
+  (seen-ops (253 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6654,6 +7539,12 @@
   (label 259)
   (parent 176)
   (seen 254)
+  (seen-ops
+    (254
+      (operation nonce-test (displaced 7 2 resp 2) x3 (1 0)
+        (enc "okay" x3 x3 (pubk a)) (enc "okay" x1-0 x3 (pubk a))
+        (enc "okay" y3-0 x3 (pubk a)) (enc x3 x3 (pubk a))
+        (enc x1-0 x3 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 2 not yet seen"))
 
@@ -6684,6 +7575,7 @@
   (label 260)
   (parent 177)
   (seen 255)
+  (seen-ops (255 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6714,6 +7606,7 @@
   (label 261)
   (parent 177)
   (seen 256)
+  (seen-ops (256 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6744,6 +7637,7 @@
   (label 262)
   (parent 178)
   (seen 186)
+  (seen-ops (186 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6776,6 +7670,15 @@
   (label 263)
   (parent 178)
   (seen 150 273)
+  (seen-ops
+    (150
+      (operation nonce-test (displaced 7 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (273
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -6806,6 +7709,15 @@
   (label 264)
   (parent 178)
   (seen 151 275)
+  (seen-ops
+    (151
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (275
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -6838,6 +7750,23 @@
   (label 265)
   (parent 178)
   (seen 152 189 324 326)
+  (seen-ops
+    (152
+      (operation nonce-test (displaced 7 4 resp 2) x1 (1 0)
+        (enc "okay" y3-2 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (189
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (324
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (326
+      (operation nonce-test (displaced 7 3 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 2 not yet seen"))
 
@@ -6865,6 +7794,7 @@
   (label 266)
   (parent 179)
   (seen 190)
+  (seen-ops (190 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6895,6 +7825,19 @@
   (label 267)
   (parent 179)
   (seen 191 240 326)
+  (seen-ops
+    (191
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (240
+      (operation nonce-test (displaced 6 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (326
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 1 not yet seen"))
 
@@ -6925,6 +7868,7 @@
   (label 268)
   (parent 180)
   (seen 192)
+  (seen-ops (192 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -6957,6 +7901,19 @@
   (label 269)
   (parent 180)
   (seen 193 242 328)
+  (seen-ops
+    (193
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (242
+      (operation nonce-test (displaced 7 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (328
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 1 not yet seen"))
 
@@ -6988,6 +7945,7 @@
   (label 270)
   (parent 183)
   (seen 133)
+  (seen-ops (133 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7019,6 +7977,7 @@
   (label 271)
   (parent 183)
   (seen 134)
+  (seen-ops (134 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7049,6 +8008,7 @@
   (label 272)
   (parent 187)
   (seen 299)
+  (seen-ops (299 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7081,6 +8041,12 @@
   (label 273)
   (parent 187)
   (seen 147)
+  (seen-ops
+    (147
+      (operation nonce-test (displaced 7 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-2 y3 (pubk a))
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7108,6 +8074,7 @@
   (label 274)
   (parent 188)
   (seen 143)
+  (seen-ops (143 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7138,6 +8105,12 @@
   (label 275)
   (parent 188)
   (seen 142)
+  (seen-ops
+    (142
+      (operation nonce-test (displaced 6 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-2 y3 (pubk a))
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7168,6 +8141,7 @@
   (label 276)
   (parent 189)
   (seen 146)
+  (seen-ops (146 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7200,6 +8174,12 @@
   (label 277)
   (parent 189)
   (seen 145)
+  (seen-ops
+    (145
+      (operation nonce-test (displaced 7 3 resp 2) y3 (1 0)
+        (enc "okay" y3 y3 (pubk a)) (enc "okay" y3-2 y3 (pubk a))
+        (enc "okay" y3-1 y3 (pubk a)) (enc y3 x3 (pubk a))
+        (enc y3 y3 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7227,6 +8207,7 @@
   (label 278)
   (parent 191)
   (seen 244)
+  (seen-ops (244 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7257,6 +8238,7 @@
   (label 279)
   (parent 193)
   (seen 278)
+  (seen-ops (278 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7286,6 +8268,7 @@
   (label 280)
   (parent 195)
   (seen 205)
+  (seen-ops (205 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7320,6 +8303,12 @@
   (label 281)
   (parent 195)
   (seen 206)
+  (seen-ops
+    (206
+      (operation nonce-test (displaced 6 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc "okay" y3-2 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7349,6 +8338,7 @@
   (label 282)
   (parent 196)
   (seen 207)
+  (seen-ops (207 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7382,6 +8372,7 @@
   (label 283)
   (parent 198)
   (seen 208)
+  (seen-ops (208 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7419,6 +8410,12 @@
   (label 284)
   (parent 198)
   (seen 209)
+  (seen-ops
+    (209
+      (operation nonce-test (displaced 7 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc "okay" y3-2 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7452,6 +8449,7 @@
   (label 285)
   (parent 199)
   (seen 210)
+  (seen-ops (210 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7489,6 +8487,12 @@
   (label 286)
   (parent 199)
   (seen 211)
+  (seen-ops
+    (211
+      (operation nonce-test (displaced 7 2 resp 2) y3-0 (1 0)
+        (enc "okay" y3-0 y3-0 (pubk a)) (enc "okay" y3-1 y3-0 (pubk a))
+        (enc "okay" y3-2 y3-0 (pubk a)) (enc y3-0 x3 (pubk a))
+        (enc y3-0 y3-0 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7522,6 +8526,7 @@
   (label 287)
   (parent 201)
   (seen 212)
+  (seen-ops (212 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7549,6 +8554,7 @@
   (label 288)
   (parent 202)
   (seen 213)
+  (seen-ops (213 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7579,6 +8585,15 @@
   (label 289)
   (parent 202)
   (seen 195 300)
+  (seen-ops
+    (195
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (300
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -7609,6 +8624,19 @@
   (label 290)
   (parent 202)
   (seen 215 281 338)
+  (seen-ops
+    (215
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (281
+      (operation nonce-test (displaced 6 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (338
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 1 not yet seen"))
 
@@ -7639,6 +8667,7 @@
   (label 291)
   (parent 203)
   (seen 216)
+  (seen-ops (216 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7671,6 +8700,15 @@
   (label 292)
   (parent 203)
   (seen 198 303)
+  (seen-ops
+    (198
+      (operation nonce-test (displaced 7 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (303
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 2 not yet seen"))
 
@@ -7703,6 +8741,23 @@
   (label 293)
   (parent 203)
   (seen 199 218 338 341)
+  (seen-ops
+    (199
+      (operation nonce-test (displaced 7 3 resp 2) x1 (1 0)
+        (enc "okay" y3-2 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (218
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (338
+      (operation nonce-test (displaced 7 4 resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (341
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" y3-1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "6 in cohort - 2 not yet seen"))
 
@@ -7733,6 +8788,7 @@
   (label 294)
   (parent 204)
   (seen 219)
+  (seen-ops (219 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7765,6 +8821,19 @@
   (label 295)
   (parent 204)
   (seen 220 286 343)
+  (seen-ops
+    (220
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (286
+      (operation nonce-test (displaced 7 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a))))
+    (343
+      (operation nonce-test (added-strand resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc x1 x3 (pubk a)) (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "4 in cohort - 1 not yet seen"))
 
@@ -7793,6 +8862,7 @@
   (label 296)
   (parent 206)
   (seen 207)
+  (seen-ops (207 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7824,6 +8894,7 @@
   (label 297)
   (parent 209)
   (seen 296)
+  (seen-ops (296 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7855,6 +8926,7 @@
   (label 298)
   (parent 211)
   (seen 233)
+  (seen-ops (233 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7882,6 +8954,7 @@
   (label 299)
   (parent 214)
   (seen 205)
+  (seen-ops (205 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7912,6 +8985,12 @@
   (label 300)
   (parent 214)
   (seen 206)
+  (seen-ops
+    (206
+      (operation nonce-test (displaced 6 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -7939,6 +9018,7 @@
   (label 301)
   (parent 215)
   (seen 207)
+  (seen-ops (207 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -7969,6 +9049,7 @@
   (label 302)
   (parent 217)
   (seen 208)
+  (seen-ops (208 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8001,6 +9082,12 @@
   (label 303)
   (parent 217)
   (seen 209)
+  (seen-ops
+    (209
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -8031,6 +9118,7 @@
   (label 304)
   (parent 218)
   (seen 210)
+  (seen-ops (210 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8063,6 +9151,12 @@
   (label 305)
   (parent 218)
   (seen 211)
+  (seen-ops
+    (211
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-0 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "2 in cohort - 1 not yet seen"))
 
@@ -8093,6 +9187,7 @@
   (label 306)
   (parent 220)
   (seen 212)
+  (seen-ops (212 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8139,6 +9234,7 @@
   (label 308)
   (parent 224)
   (seen 73)
+  (seen-ops (73 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8169,6 +9265,7 @@
   (label 309)
   (parent 226)
   (seen 307)
+  (seen-ops (307 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8202,6 +9299,7 @@
   (label 310)
   (parent 238)
   (seen 236)
+  (seen-ops (236 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8233,6 +9331,7 @@
   (label 311)
   (parent 240)
   (seen 233)
+  (seen-ops (233 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8266,6 +9365,7 @@
   (label 312)
   (parent 242)
   (seen 235)
+  (seen-ops (235 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8289,6 +9389,7 @@
   (label 313)
   (parent 243)
   (seen 234)
+  (seen-ops (234 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8320,6 +9421,7 @@
   (label 314)
   (parent 249)
   (seen 232)
+  (seen-ops (232 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8343,6 +9445,7 @@
   (label 315)
   (parent 252)
   (seen 131)
+  (seen-ops (131 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8366,6 +9469,7 @@
   (label 316)
   (parent 253)
   (seen 132)
+  (seen-ops (132 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8449,6 +9553,7 @@
   (label 319)
   (parent 255)
   (seen 135)
+  (seen-ops (135 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8472,6 +9577,7 @@
   (label 320)
   (parent 256)
   (seen 136)
+  (seen-ops (136 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8505,6 +9611,7 @@
   (label 321)
   (parent 259)
   (seen 317)
+  (seen-ops (317 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8538,6 +9645,7 @@
   (label 322)
   (parent 259)
   (seen 318)
+  (seen-ops (318 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8570,6 +9678,7 @@
   (label 323)
   (parent 263)
   (seen 272)
+  (seen-ops (272 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8605,6 +9714,17 @@
   (label 324)
   (parent 263)
   (seen 238 273)
+  (seen-ops
+    (238
+      (operation nonce-test (displaced 8 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (273
+      (operation nonce-test (displaced 8 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -8635,6 +9755,7 @@
   (label 325)
   (parent 264)
   (seen 274)
+  (seen-ops (274 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8667,6 +9788,17 @@
   (label 326)
   (parent 264)
   (seen 240 275)
+  (seen-ops
+    (240
+      (operation nonce-test (displaced 7 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (275
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -8699,6 +9831,7 @@
   (label 327)
   (parent 265)
   (seen 276)
+  (seen-ops (276 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8734,6 +9867,17 @@
   (label 328)
   (parent 265)
   (seen 242 277)
+  (seen-ops
+    (242
+      (operation nonce-test (displaced 8 4 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (277
+      (operation nonce-test (displaced 8 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -8764,6 +9908,7 @@
   (label 329)
   (parent 267)
   (seen 278)
+  (seen-ops (278 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8796,6 +9941,7 @@
   (label 330)
   (parent 269)
   (seen 279)
+  (seen-ops (279 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8829,6 +9975,7 @@
   (label 331)
   (parent 273)
   (seen 345)
+  (seen-ops (345 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8860,6 +10007,7 @@
   (label 332)
   (parent 275)
   (seen 233)
+  (seen-ops (233 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8893,6 +10041,7 @@
   (label 333)
   (parent 277)
   (seen 332)
+  (seen-ops (332 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8927,6 +10076,7 @@
   (label 334)
   (parent 281)
   (seen 296)
+  (seen-ops (296 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -8964,6 +10114,7 @@
   (label 335)
   (parent 284)
   (seen 297)
+  (seen-ops (297 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9001,6 +10152,7 @@
   (label 336)
   (parent 286)
   (seen 298)
+  (seen-ops (298 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9031,6 +10183,7 @@
   (label 337)
   (parent 289)
   (seen 299)
+  (seen-ops (299 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9063,6 +10216,17 @@
   (label 338)
   (parent 289)
   (seen 281 300)
+  (seen-ops
+    (281
+      (operation nonce-test (displaced 7 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (300
+      (operation nonce-test (displaced 7 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -9093,6 +10257,7 @@
   (label 339)
   (parent 290)
   (seen 301)
+  (seen-ops (301 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9125,6 +10290,7 @@
   (label 340)
   (parent 292)
   (seen 302)
+  (seen-ops (302 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9160,6 +10326,17 @@
   (label 341)
   (parent 292)
   (seen 284 303)
+  (seen-ops
+    (284
+      (operation nonce-test (displaced 8 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (303
+      (operation nonce-test (displaced 8 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -9192,6 +10369,7 @@
   (label 342)
   (parent 293)
   (seen 304)
+  (seen-ops (304 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9227,6 +10405,17 @@
   (label 343)
   (parent 293)
   (seen 286 305)
+  (seen-ops
+    (286
+      (operation nonce-test (displaced 8 3 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-2 x1 (pubk a))
+        (enc "okay" y3-1 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a))))
+    (305
+      (operation nonce-test (displaced 8 2 resp 2) x1 (1 0)
+        (enc "okay" x1 x1 (pubk a)) (enc "okay" y3-1 x1 (pubk a))
+        (enc "okay" y3-2 x1 (pubk a)) (enc x1 x3 (pubk a))
+        (enc x1 x1 (pubk a)))))
   (unrealized (1 0))
   (comment "3 in cohort - 1 not yet seen"))
 
@@ -9259,6 +10448,7 @@
   (label 344)
   (parent 295)
   (seen 306)
+  (seen-ops (306 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9290,6 +10480,7 @@
   (label 345)
   (parent 300)
   (seen 296)
+  (seen-ops (296 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9323,6 +10514,7 @@
   (label 346)
   (parent 303)
   (seen 297)
+  (seen-ops (297 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9356,6 +10548,7 @@
   (label 347)
   (parent 305)
   (seen 298)
+  (seen-ops (298 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9379,6 +10572,7 @@
   (label 348)
   (parent 307)
   (seen 308)
+  (seen-ops (308 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9404,6 +10598,7 @@
   (label 349)
   (parent 317)
   (seen 229)
+  (seen-ops (229 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9429,6 +10624,7 @@
   (label 350)
   (parent 318)
   (seen 230)
+  (seen-ops (230 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9465,6 +10661,7 @@
   (label 351)
   (parent 324)
   (seen 331)
+  (seen-ops (331 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9498,6 +10695,7 @@
   (label 352)
   (parent 326)
   (seen 332)
+  (seen-ops (332 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9534,6 +10732,7 @@
   (label 353)
   (parent 328)
   (seen 333)
+  (seen-ops (333 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9567,6 +10766,7 @@
   (label 354)
   (parent 338)
   (seen 345)
+  (seen-ops (345 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9603,6 +10803,7 @@
   (label 355)
   (parent 341)
   (seen 346)
+  (seen-ops (346 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -9639,6 +10840,7 @@
   (label 356)
   (parent 343)
   (seen 347)
+  (seen-ops (347 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 

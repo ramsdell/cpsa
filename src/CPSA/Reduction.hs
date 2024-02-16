@@ -87,7 +87,7 @@ merge (Seen xs) (Seen ys) = Seen (xs ++ ys)
 -- last position is used to hold the reverse of the labels of the
 -- seen children
 data Reduct t g s e  =
-    Reduct !(LPreskel) !Int ![Preskel] ![Int]
+    Reduct !(LPreskel) !Int ![Preskel] ![SeenSkel]
 
 parMap :: (a -> b) -> [a] -> [b]
 parMap _ [] = []
@@ -259,10 +259,14 @@ mkMode p =
            visitOldStrandsFirst = optTryOldStrandsFirst p,
            reverseNodeOrder = optTryYoungNodesFirst p}
 
-duplicates :: Seen -> ([Preskel], [Int]) -> Preskel -> ([Preskel], [Int])
+-- The Seen skeleton's label with the duplicate skeleton
+type SeenSkel = (Int, Preskel)
+
+duplicates :: Seen -> ([Preskel], [SeenSkel]) -> Preskel ->
+              ([Preskel], [SeenSkel])
 duplicates seen (unseen, dups) kid =
     case recall (wasSeen $ gist kid) seen of
-      Just (_, label) -> (unseen, label : dups)
+      Just (_, label) -> (unseen, (label, kid) : dups)
       Nothing -> (kid : unseen, dups)
 
 -- Make a todo list for dump
@@ -270,7 +274,7 @@ mktodo :: [Reduct t g s e] -> [LPreskel] -> [LPreskel] -> [LPreskel]
 mktodo reducts todo toobig =
     map (\(Reduct lk _ _ _) -> lk) reducts ++ reverse todo ++ reverse toobig
 
-type Next = (Int, Seen, [LPreskel], [Int])
+type Next = (Int, Seen, [LPreskel], [SeenSkel])
 
 -- Update state variables used by step.
 next :: LPreskel -> Next -> Preskel -> Next
@@ -278,7 +282,7 @@ next p (n, seen, todo, dups) k =
     let g = gist k in
     case recall (wasSeen g) seen of
       Just (_, label) ->
-          (n, seen, todo, label : dups)
+          (n, seen, todo, (label, k) : dups)
       Nothing ->
           (n + 1, remember (g, n) seen, lk : todo, dups)
           where
@@ -329,14 +333,16 @@ dump p h (lk : lks) msg =
 -- Add a label, maybe a parent, a list of seen preskeletons isomorphic
 -- to some members of this skeleton's cohort, and a list of unrealized
 -- nodes.  If it's a shape, note this fact.  Add a comment if present.
-commentPreskel :: LPreskel -> [Int] -> [Node] -> Kind ->
+commentPreskel :: LPreskel -> [SeenSkel] -> [Node] -> Kind ->
                   Anno -> String -> SExpr ()
 commentPreskel lk seen unrealized kind anno msg =
     displayPreskel k $
     addKeyValues "label" [N () (label lk)] $
     maybeAddVKeyValues "parent" (\p -> [N () (label p)]) (parent lk) $
-    condAddKeyValues "seen" (not $ null seen)
-                     (map (N ()) (L.sort (L.nub seen))) $
+    condAddKeyValues "seen" (not $ null sortedSeen)
+                     (map (N ()) (map fst sortedSeen)) $
+    condAddKeyValues "seen-ops" (not $ null sortedSeen)
+                     (map displaySeen sortedSeen) $
     addKeyValues "unrealized" (map displayNode $ L.sort unrealized) $
     addKindKey kind $ addAnnoKey anno $
     condAddKeyValues "satisfies" (kind == Shape && (not $ null $ kgoals k))
@@ -354,6 +360,7 @@ commentPreskel lk seen unrealized kind anno msg =
     where
       fringe = isFringe kind
       k = content lk
+      sortedSeen = L.sortOn fst seen
       starter k =               -- True for the POV skeleton and
           case pov k of         -- just a few others
             Nothing -> True
@@ -407,6 +414,13 @@ addAnnoKey Nada xs = xs
 addAnnoKey Preskeleton xs = addKeyValues "preskeleton" [] xs
 addAnnoKey SatisfiesAll xs = addKeyValues "satisfies-all" [] xs
 addAnnoKey Dead xs = addKeyValues "dead" [] xs
+
+displaySeen :: SeenSkel -> SExpr ()
+displaySeen (label, k) =
+    L () (N () label : displayOperation k ctx [])
+    where
+      ctx = varsContext vars
+      vars = kfvars k ++ kvars k
 
 -- Variable assignments and security goals
 

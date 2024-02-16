@@ -497,6 +497,7 @@
   (label 19)
   (parent 17)
   (seen 18)
+  (seen-ops (18 (operation generalization separated n-0)))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 

@@ -230,6 +230,7 @@
   (label 10)
   (parent 8)
   (seen 9)
+  (seen-ops (9 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 

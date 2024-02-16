@@ -196,6 +196,7 @@
   (label 7)
   (parent 6)
   (seen 5)
+  (seen-ops (5 (operation generalization deleted (1 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 
@@ -224,6 +225,7 @@
   (label 8)
   (parent 6)
   (seen 5)
+  (seen-ops (5 (operation generalization deleted (3 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 

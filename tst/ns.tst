@@ -550,6 +550,7 @@
   (label 24)
   (parent 23)
   (seen 22)
+  (seen-ops (22 (operation generalization deleted (2 0))))
   (unrealized)
   (comment "1 in cohort - 0 not yet seen"))
 

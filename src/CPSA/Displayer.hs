@@ -6,7 +6,8 @@
 -- modify it under the terms of the BSD License as published by the
 -- University of California.
 
-module CPSA.Displayer (displayProt, displayPreskel, displayNode) where
+module CPSA.Displayer (displayProt, displayPreskel, displayNode,
+                       displayOperation, varsContext) where
 
 import qualified Data.List as L
 import qualified Data.Set as S
