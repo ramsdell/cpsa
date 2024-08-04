@@ -11,7 +11,6 @@ module CPSA.Lib.Utilities where
 
 import qualified Data.Set as S
 import qualified Data.List as L
-import Data.List (foldl')
 
 adjoin :: Eq a => a -> [a] -> [a]
 adjoin x xs
