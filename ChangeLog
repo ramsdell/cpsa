@@ -1,3 +1,8 @@
+2025-05-02  John D. Ramsdell  <ramsdell0@gmail.com>
+
+	* src/CPSA/RoleCoq/Main.hs: Updated Roletran compiler for use with
+	rocq 9.0.0.
+
 2022-04-07  John D. Ramsdell  <ramsdell@mitre.org>
 
 	* src/CPSA/{Graph,SAS,Shapes}/Main.hs: Removed extra quotes in
